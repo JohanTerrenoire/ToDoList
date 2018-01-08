@@ -13,6 +13,32 @@
     <!--Affichage de la liste-->
     <div id="vue_liste">
       <h3>Mes tâches à faire :</h3>
+      <?php
+          try {
+            //Connexion à la base de données.
+            $user = 'list';//L'utilisateur pour se connecter
+            $mdp = 'passwd';//Son mot de passe
+            $machine = 'localhost';//Adresse de la machine où est stockée la base
+            $basename = 'ProgWeb';//Nom de la base de données
+            $bdd = new PDO('mysql:host='.$machine.';dbname='.$basename.';charset=utf8', $user, $mdp);
+            $tablename = 'liste';//Nom de la table
+          } catch (Exception $e) {
+            //En cas d'erreur d'ouverture de la base, afficher les erreurs.
+            die('Erreur : ' . $e->getMessage());
+          }
+          try {
+            $reponse = $bdd->query('SELECT * FROM liste');
+          } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+          }
+          echo"<form id='form_todo'>";
+          $i = 1;
+            while ($donnees = $reponse->fetch()){
+              print_r("<input type='checkbox' value='$i'>".$donnees['item']."<br/>");
+              $i++;
+            }
+          echo"</form>";
+      ?>
     </div>
     <!--Le lieu d'ajout de tâche-->
     <div id="ajout">
@@ -24,8 +50,8 @@
     </div>
     <!--La suppression des éléments-->
     <div id="suppression">
-      <form method="post" action="supprimer.php">
-        <input type="submit" value="Supprimer" />
+      <form method="post">
+        <input type="submit" value="Supprimer" onclick="supprimerDonnees()"/>
       </form>
     <div>
   </body>
