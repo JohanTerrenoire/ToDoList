@@ -31,10 +31,10 @@
           } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
           }
-          echo"<form id='form_todo'>";
+          echo "<form id='form_todo'>";
           $i = 1;
             while ($donnees = $reponse->fetch()){
-              echo"<input name='chk' type='checkbox' value='".$donnees['item']."' id='chk_".$i."'>".$donnees['item']."<br/>";
+              echo "<input name='chk' id='".$donnees['id']."' type='checkbox' value='".$donnees['item']."' >".$donnees['item']."<br/>";
               $i++;
             }
           echo"<input type='submit' value='Supprimer' onclick='supprimerDonnees(this.form.chk)'/>";
