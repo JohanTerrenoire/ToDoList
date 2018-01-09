@@ -1,8 +1,14 @@
-body
+#conteneur
 {
   width: 85%;
   margin: auto;
-  background-color: #A9C0FE;
+  background-image: url(img/fond-site.jpg);
+}
+body
+{
+  background-image:url(img/fond-site2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 div
 {
@@ -10,4 +16,15 @@ div
   margin: 10px;
   padding: 3px;
   border-radius: 5px;
+}
+h1, h3
+{
+  text-align: center;
+}
+#ajout, #vue_liste
+{
+  float: left;
+  background-image: url(img/fond-site.jpg);
+  min-width: 47%;
+  min-height: 50%;
 }

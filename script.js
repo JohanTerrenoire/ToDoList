@@ -12,7 +12,6 @@ function supprimerDonnees(checkbox){
   for (var i=0; i<checkbox.length;i++) { //Parcours du formulaire
     if (checkbox[i].checked == true) { //Si la checkbox est cochée
       var url = "supprimer.php?chk_id=" + checkbox[i].id;
-      alert(checkbox[i].id);
       xhr.open("GET", url);
       xhr.send(null);
     }
