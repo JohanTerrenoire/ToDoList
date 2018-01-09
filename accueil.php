@@ -13,7 +13,8 @@
       <h1>My ToDoList</h1>
       <div id="vue_liste">
     <!--Affichage de la liste-->
-        <h3>Mes tâches à faire :</h3>
+    <fieldset>
+        <legend><h3>Mes tâches à faire :</h3></legend>
         <?php
             try {
               //Connexion à la base de données.
@@ -41,14 +42,17 @@
             echo"<input type='submit' value='Supprimer' onclick='supprimerDonnees(this.form.chk)'/>";
             echo"</form>";
         ?>
+      </fieldset>
       </div>
       <!--Le lieu d'ajout de tâche-->
       <div id="ajout">
-        <h3>Ajouter à ma liste :</h3>
-        <form method="post" id="ajout">
-          <input type="text" placeholder="Tapez ici " name="item"/>
-          <input type="submit" value="Ajouter" onclick="envoyerDonnees()"/>
-        </form>
+        <fieldset id="ajout">
+          <legend><h3>Ajouter à ma liste :</h3></legend>
+          <form method="post" id="ajout">
+            <input type="text" placeholder="Tapez ici " name="item"/>
+            <input type="submit" value="Ajouter" onclick="envoyerDonnees()"/>
+          </form>
+        </fieldset>
       </div>
     </div>
   </body>
