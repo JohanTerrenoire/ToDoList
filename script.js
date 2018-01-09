@@ -18,7 +18,7 @@ function supprimerDonnees(checkbox){
   if (chk_sel == false) { //Si aucun élément est sélectionné, message d'erreur
     alert("Vous n'avez sélectionné aucun élément.");
   }
-  else {
+  else { //Si au moins un élément est sélectionné, faire la requête de suppression
     var xhr = new XMLHttpRequest();
     for (var i=0; i<checkbox.length;i++) { //Parcours du formulaire
       if (checkbox[i].checked == true) { //Si la checkbox est cochée
