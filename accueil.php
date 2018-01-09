@@ -46,10 +46,10 @@
       </div>
       <!--Le lieu d'ajout de tâche-->
       <div id="ajout">
-        <fieldset id="ajout">
+        <fieldset>
           <legend><h3>Ajouter à ma liste :</h3></legend>
-          <form method="post" id="ajout">
-            <input type="text" placeholder="Tapez ici " name="item"/>
+          <form method="post">
+            <input type="text" placeholder="Tapez ici " name="item" id="formulaire"/>
             <input type="submit" value="Ajouter" onclick="envoyerDonnees()"/>
           </form>
         </fieldset>

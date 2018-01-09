@@ -6,6 +6,9 @@ function envoyerDonnees(){
   xhr.open("GET", url);
   xhr.send(null);
 }
+function ajout_dans_form(text){
+  
+}
 //Fonction de suppression des items sélectionnés
 function supprimerDonnees(checkbox){
   var xhr = new XMLHttpRequest();
