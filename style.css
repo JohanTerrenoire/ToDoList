@@ -3,6 +3,7 @@
   width: 85%;
   margin: auto;
   background-image: url(img/fond-site.jpg);
+  min-height: 400px;;
 }
 body
 {
@@ -12,7 +13,6 @@ body
 }
 div
 {
-  border: 3px solid black;
   margin: 10px;
   padding: 3px;
   border-radius: 5px;
@@ -21,10 +21,13 @@ h1, h3
 {
   text-align: center;
 }
-#ajout, #vue_liste
+#ajout
 {
   float: left;
-  background-image: url(img/fond-site.jpg);
-  min-width: 47%;
-  min-height: 50%;
+  width: 47%;
+}
+#vue_liste
+{
+  float: left;
+  width: 47%;
 }
