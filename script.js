@@ -1,6 +1,3 @@
-function afficheDonnees(var text){
-
-}
 //Envoyer les données dans la base de données
 function envoyerDonnees(){
   var xhr = new XMLHttpRequest();
@@ -10,9 +7,10 @@ function envoyerDonnees(){
   xhr.send(null);
 }
 //Fonction de suppression des items sélectionnés
-function supprimerDonnees(){
-  var formulaire = document.getElementById('form_todo');//Récupérer le formulaire
-  for (var i = 0; i < formulaire.elements.length; i++) {
-    alert(i);
+function supprimerDonnees(checkbox){
+  for (var i=0; i<checkbox.length;i++) {
+    if (checkbox[i].checked == true) {
+      alert(checkbox[i].value);
+    }
   }
 }

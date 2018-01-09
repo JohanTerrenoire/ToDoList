@@ -34,9 +34,10 @@
           echo"<form id='form_todo'>";
           $i = 1;
             while ($donnees = $reponse->fetch()){
-              print_r("<input type='checkbox' value='$i'>".$donnees['item']."<br/>");
+              echo"<input name='chk' type='checkbox' value='".$donnees['item']."' id='chk_".$i."'>".$donnees['item']."<br/>";
               $i++;
             }
+          echo"<input type='submit' value='Supprimer' onclick='supprimerDonnees(this.form.chk)'/>";
           echo"</form>";
       ?>
     </div>
@@ -48,12 +49,6 @@
         <input type="submit" value="Ajouter" onclick="envoyerDonnees()"/>
       </form>
     </div>
-    <!--La suppression des éléments-->
-    <div id="suppression">
-      <form method="post">
-        <input type="submit" value="Supprimer" onclick="supprimerDonnees()"/>
-      </form>
-    <div>
   </body>
   <!--Le footer-->
   <footer>
