@@ -8,9 +8,12 @@ function envoyerDonnees(){
 }
 //Fonction de suppression des items sélectionnés
 function supprimerDonnees(checkbox){
-  for (var i=0; i<checkbox.length;i++) {
-    if (checkbox[i].checked == true) {
-      alert(checkbox[i].value);
+  var xhr = new XMLHttpRequest();
+  for (var i=0; i<checkbox.length;i++) { //Parcours du formulaire
+    if (checkbox[i].checked == true) { //Si la checkbox est cochée
+      var url = "supprimer.php?item=" + checkbox[i].value;
+      xhr.open("GET", url);
+      xhr.send(null);
     }
   }
 }
